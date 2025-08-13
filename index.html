@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!doctype html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Solanta Timeline&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Questrial font (clean geometric, close to Futura look) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Questrial&amp;display=swap" rel="stylesheet" /&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- TimelineJS core --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"&gt;&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Base page styles */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>:root {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--solanta-text: #111; <span class="Apple-converted-space">  </span>/* tweak if you want darker/lighter */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--solanta-bg: transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>html, body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: var(--solanta-bg);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--solanta-text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: 'Questrial', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Make the timeline respect our colors; remove shadows */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timeline,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timeline * {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--solanta-text) !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-shadow: none !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Hide KnightLab logo */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-credit {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: none !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Hide bottom navigation / axis */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timenav-background,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timenav-line,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timenav-slider,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timenav-axis,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timenav-timeaxis {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: none !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Keep top nav only (we also set timenav_position=top in options) */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timenav {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: 0 !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Left-align slide content */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-slide-content {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: flex-start !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>align-items: flex-start !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: left !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Fast, smooth fade between slides */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-slide {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>opacity: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transition: opacity 0.1s ease-in-out !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-slide.tl-slide-active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>opacity: 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Transparent background so it blends with host page */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-timeline {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: transparent !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Extra polish */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-headline { line-height: 1.2 !important; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tl-text-content a { text-decoration-thickness: .08em; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="timeline-embed" style="width:100%; min-height: 650px;"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Initialize TimelineJS with your Google Sheet</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.addEventListener('DOMContentLoaded', function () {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const options = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font: 'Default',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>lang: 'en',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>timenav_position: 'top',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>initial_zoom: 2,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>start_at_slide: 0</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTASeBqotFAqXDWlXw05dNDAOVrUIcWdzSvFkWOE5GLDh4uqrNyZXxALwbgLf4x2uzI42j5FnIeW0UR/pubhtml';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const timeline = new TL.Timeline('timeline-embed', sheetUrl, options);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Post our height to parent for auto-resizing if the parent listens</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>function postHeight() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const h = document.documentElement.scrollHeight || document.body.scrollHeight || 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>window.parent &amp;&amp; window.parent.postMessage({ height: h }, '*');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// After initial render and on resize/slide changes</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>timeline.on('loaded', postHeight);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>window.addEventListener('resize', postHeight);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// A small periodic check for a moment, to catch late layout changes (images etc.)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let checks = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const interval = setInterval(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>postHeight();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (++checks &gt; 20) clearInterval(interval);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}, 250);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
