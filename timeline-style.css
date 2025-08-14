@@ -1,0 +1,40 @@
+/* Load Questrial inside the KnightLab iframe */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+/* Apply Questrial + remove shadows */
+.tl-timeline, .tl-timeline * {
+  font-family: 'Questrial', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !important;
+  text-shadow: none !important;
+  color: inherit !important;
+}
+
+/* Hide KnightLab logo */
+.tl-credit { display: none !important; }
+
+/* Hide bottom timenav / axis */
+.tl-timenav-background,
+.tl-timenav-line,
+.tl-timenav-slider,
+.tl-timenav-axis,
+.tl-timenav-timeaxis { display: none !important; }
+
+/* Keep top nav clean */
+.tl-timenav { border: 0 !important; }
+
+/* Left-align first (all) slide content */
+.tl-slide-content {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+/* Fast fade between slides */
+.tl-slide { opacity: 0; transition: opacity 0.1s ease-in-out !important; }
+.tl-slide.tl-slide-active { opacity: 1; }
+
+/* Transparent background */
+.tl-timeline { background: transparent !important; }
+
+/* Small polish */
+.tl-headline { line-height: 1.2 !important; }
+.tl-text-content a { text-decoration-thickness: .08em; }
